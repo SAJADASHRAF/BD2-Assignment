@@ -221,8 +221,8 @@ function sortHotelsByPricing(hotels, pricing) {
 
 app.get('/hotels/sort/pricing', (req, res) => {
   let pricing = req.query.pricing;
-  let sortedHotels = sortHotelsByPricing(hotels, pricing);
-  res.json(sortedHotels);
+  let result = sortHotelsByPricing(hotels, pricing);
+  res.json({ hotels: result });
 });
 
 function sortHotelsByRating(hotels, rating) {
@@ -237,8 +237,8 @@ function sortHotelsByRating(hotels, rating) {
 
 app.get('/hotels/sort/rating', (req, res) => {
   let rating = req.query.rating;
-  let sortedHotels = sortHotelsByRating(hotels, rating);
-  res.json(sortedHotels);
+  let result = sortHotelsByRating(hotels, rating);
+  res.json({ hotels: result });
 });
 
 function sortHotelsByReviews(hotels, reviews) {
@@ -253,8 +253,8 @@ function sortHotelsByReviews(hotels, reviews) {
 
 app.get('/hotels/sort/reviews', (req, res) => {
   let reviews = req.query.reviews;
-  let sortedHotels = sortHotelsByReviews(hotels, reviews);
-  res.json(sortedHotels);
+  let result = sortHotelsByReviews(hotels, reviews);
+  res.json({ hotels: result });
 });
 
 function filterByAmenity(hotelObj, amenity) {
@@ -263,8 +263,8 @@ function filterByAmenity(hotelObj, amenity) {
 
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
-  let filteredHotels = hotels.filter((hotelObj) => filterByAmenity(hotelObj, amenity));
-  res.json(filteredHotels);
+  let result = hotels.filter((hotelObj) => filterByAmenity(hotelObj, amenity));
+  res.json({ hotels: result });
 });
 
 function filterByCountry(hotelObj, country) {
@@ -273,8 +273,8 @@ function filterByCountry(hotelObj, country) {
 
 app.get('/hotels/filter/country', (req, res) => {
   let country = req.query.country;
-  let filteredHotels = hotels.filter((hotelObj) => filterByCountry(hotelObj, country));
-  res.json(filteredHotels);
+  let result = hotels.filter((hotelObj) => filterByCountry(hotelObj, country));
+  res.json({ hotels: result });
 });
 
 function filterByCategory(hotelObj, category) {
@@ -283,8 +283,8 @@ function filterByCategory(hotelObj, category) {
 
 app.get('/hotels/filter/category', (req, res) => {
   let category = req.query.category;
-  let filteredHotels = hotels.filter((hotelObj) => filterByCategory(hotelObj, category));
-  res.json(filteredHotels);
+  let result = hotels.filter((hotelObj) => filterByCategory(hotelObj, category));
+  res.json({ hotels: result });
 });
 
 
